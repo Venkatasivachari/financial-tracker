@@ -12,7 +12,8 @@ const { errorHandler } = require('./middleware/errorHandler');
 
 const app = express();
 
-app.use(cors({ origin: '*' })); // lock down to specific origins in production
+
+app.use(cors({ origin: "https://your-frontend-domain.com" })); // lock down to specific origins in production
 app.use(express.json());
 app.use(morgan('dev'));
 
