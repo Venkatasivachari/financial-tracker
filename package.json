@@ -1,0 +1,24 @@
+{
+  "name": "personal-finance-tracker",
+  "version": "1.0.0",
+  "description": "Full-stack personal finance tracker application",
+  "main": "backend/src/index.js",
+  "scripts": {
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
+    "build-and-start": "cd backend && npm install && npm run seed || true && npm start",
+    "build": "cd frontend && npm install && npm run build",
+    "start": "cd backend && npm start",
+    "seed": "cd backend && npm run seed"
+  },
+  "keywords": [
+    "finance",
+    "budget",
+    "expense",
+    "tracker"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "engines": {
+    "node": "18.x"
+  }
+}
