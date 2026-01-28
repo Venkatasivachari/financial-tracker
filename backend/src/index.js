@@ -12,8 +12,12 @@ const { errorHandler } = require('./middleware/errorHandler');
 
 const app = express();
 
+// CORS configuration - allow localhost for development, specific domain for production
+const allowedOrigins = process.env.NODE_ENV === 'production'
+  ? ['https://your-frontend-domain.com']
+  : ['http://localhost:5173', 'http://localhost:3000', 'http://127.0.0.1:5173'];
 
-app.use(cors({ origin: "https://your-frontend-domain.com" })); // lock down to specific origins in production
+app.use(cors({ origin: allowedOrigins }));
 app.use(express.json());
 app.use(morgan('dev'));
 
